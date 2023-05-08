@@ -1,0 +1,7 @@
+<<--Learn Cypress-->>
+
+- Install Node.js
+- npm install cypress --save-dev
+
+Extra
+- npm install --save-dev chai
