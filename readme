@@ -5,3 +5,10 @@
 
 Extra
 - npm install --save-dev chai
+
+Tested Example :
+- Xpath Locator
+- Assertions
+- Radio btn & Checkbox btn
+- Dropdowns
+- Alerts
