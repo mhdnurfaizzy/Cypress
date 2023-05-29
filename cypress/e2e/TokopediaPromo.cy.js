@@ -75,13 +75,15 @@ describe('Login Tokopedia', () => {
         cy.log('Berhasil Login')
         cy.wait(5000)
         //pop up
-        cy.get('.css-18qem4c.e1nc1fa22').then(($el) => {
+        cy.xpath("//div[@class='css-18qem4c e1nc1fa22']", {timeout : 3000}).then(($el) => {
             if ($el.length) {
             //Element exist
-             cy.xpath("//button[@aria-label='Tutup tampilan modal']//*[name()='svg']").click()
+             cy.xpath("//button[@aria-label='Tutup tampilan modal']//*[name()='svg']", {timeout : 5000}).click()
              cy.log('Muncul pop up')
+             cy.reload()
             } else {
             // Element does not exist, do something else
+            cy.reload()
             cy.get("div[id='my-profile-header'] div[class='css-67arje']", { timeout: 10000 })
             .should('be.visible')
             .and('contain', 'Muhammad')
@@ -99,13 +101,9 @@ describe('Login Tokopedia', () => {
         cy.wait(3000)
 
         //Use Promo
-        cy.get("//span[@class='css-12gses5']")
+        cy.get('[data-testid="btnActionPromoWidget"] > :nth-child(3)')
         .should('be.visible')
         .click()
-
-
-
-
 
 
     })

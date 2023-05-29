@@ -96,17 +96,19 @@ describe('Login Tokopedia', () => {
         // Logout 
         cy.reload()
         cy.wait(3000)
-        cy.get('[data-testid="btnHeaderMyProfile"] > .css-lipffl')
-        .trigger('mouseover').wait(2000);
+        cy.xpath("//div[@id='my-profile-header']")
+        .trigger('mouseover')
+        .wait(2000);
 
-        // Wait for the dropdown to become visible
-        cy.get('.css-1pxyyq2', {timeout : 2000 }).should('be.visible').then(($dropdown) => {
-        // Click the logout button inside the 
-        // cy.wait(2000)
-        // cy.get('.css-1juts7j').scrollIntoView()
-        cy.get('.css-1juts7j').should('be.visible').click()
-        cy.wrap($dropdown).click()
-        });
+        cy.xpath("//div[@class='css-1juts7j']")
+            .then(($elem) => {
+                $elem.trigger('mouseover');
+                $elem.trigger('click');
+            });
+
+        cy.log('Berhasil Keluar')
+
+
     })
   
   })
