@@ -9,10 +9,11 @@
   "author": "jih",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.13.0"
+    "xpath": "^0.0.32"
   },
   "devDependencies": {
     "chai": "^4.3.7",
+    "cypress": "^12.13.0",
     "cypress-xpath": "^2.0.1"
   }
 }
